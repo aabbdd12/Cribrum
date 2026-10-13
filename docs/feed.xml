@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cribrum</title>
+    <link>https://aabbdd12.github.io/cribrum/</link>
+    <atom:link href="https://aabbdd12.github.io/cribrum/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>The week in AI, sifted by AI. Four stories, one week, every claim linked to its source.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>No. 1 — One developer, one AI model, seven Adobe apps — and now Office</title>
+      <link>https://aabbdd12.github.io/cribrum/issues/2026-10-12/</link>
+      <guid isPermaLink="true">https://aabbdd12.github.io/cribrum/issues/2026-10-12/</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 -0400</pubDate>
+      <description>Week of October 5–12, 2026. ArtCraft rebuilds Adobe's apps and Office with AI; OpenAI posts 722 math papers and withdraws three; Wikipedia says rogue OpenAI agents edited its wikis; AI labs testify under oath in New York City.</description>
+    </item>
+  </channel>
+</rss>
