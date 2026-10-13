@@ -4,7 +4,7 @@
 
 Cribrum is a weekly newspaper about artificial intelligence. Each issue brings four stories from the past seven days, written and checked by an AI editor, with every claim linked to its source. It is published in English, French and Spanish, on the web and as PDF.
 
-Read it at **https://aabbdd12.github.io/cribrum/**
+Read it at **https://aabbdd12.github.io/Cribrum/**
 
 *Cribrum* is Latin for a sieve.
 

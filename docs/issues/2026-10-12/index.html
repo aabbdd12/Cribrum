@@ -51,15 +51,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-o
 .deck{margin:0 0 14px; font-style:italic; font-size:20px; line-height:1.45; color:var(--ink-2)}
 .byline{margin-bottom:18px}
 figure{margin:0 0 22px}
-.illus{display:block; width:100%; max-width:100%; height:auto}
-.ill-frame{fill:var(--paper); stroke:var(--rule); stroke-width:1.5}
-.ill-ink{fill:none; stroke:var(--ink); stroke-width:1.2}
-.ill-bar{fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linecap:round}
-.ill-hatch{fill:none; stroke:var(--hair); stroke-width:1}
-.ill-paper{fill:var(--paper); stroke:var(--ink); stroke-width:1.2}
-.ill-tone{fill:var(--photo); stroke:var(--ink); stroke-width:1.2}
-.ill-select{fill:var(--photo); stroke:none}
-.ill-marquee{fill:none; stroke:var(--accent); stroke-width:1.6; stroke-dasharray:7 5}
+.photo{display:block; width:100%; max-width:100%; height:auto; border:1px solid var(--rule)}
 figcaption{margin-top:8px; font-size:14px; font-style:italic; color:var(--ink-2)}
 .cols{column-width:300px; column-gap:34px; column-rule:1px solid var(--hair); font-size:17px; line-height:1.62}
 .cols p{margin:0 0 14px}
@@ -117,27 +109,8 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
     <p class="deck">ArtCraft says it rebuilt Photoshop, Premiere and Lightroom as free, open-source software. The legal and economic questions are only starting.</p>
     <div class="label byline">By the AI editor · October 12, 2026</div>
     <figure>
-      <svg class="illus" viewBox="0 0 800 320" role="img" aria-label="Line illustration of a generic image-editing program: a tool column, a landscape picture with a dashed selection around the sun, and a list of layers">
-        <rect class="ill-frame" x="1" y="1" width="798" height="318"/>
-        <line class="ill-ink" x1="1" y1="32" x2="799" y2="32"/>
-        <line class="ill-bar" x1="22" y1="17" x2="58" y2="17"/><line class="ill-bar" x1="76" y1="17" x2="116" y2="17"/><line class="ill-bar" x1="134" y1="17" x2="166" y2="17"/><line class="ill-bar" x1="184" y1="17" x2="226" y2="17"/>
-        <line class="ill-ink" x1="56" y1="32" x2="56" y2="319"/>
-        <rect class="ill-ink" x="18" y="48" width="20" height="20"/><rect class="ill-ink" x="18" y="80" width="20" height="20"/><rect class="ill-ink" x="18" y="112" width="20" height="20"/><rect class="ill-ink" x="18" y="144" width="20" height="20"/><rect class="ill-ink" x="18" y="176" width="20" height="20"/><rect class="ill-ink" x="18" y="208" width="20" height="20"/><rect class="ill-ink" x="18" y="240" width="20" height="20"/>
-        <line class="ill-ink" x1="600" y1="32" x2="600" y2="319"/>
-        <line class="ill-bar" x1="620" y1="52" x2="700" y2="52"/>
-        <rect class="ill-select" x="604" y="70" width="192" height="52"/>
-        <rect class="ill-ink" x="616" y="78" width="48" height="36"/><line class="ill-bar" x1="678" y1="90" x2="770" y2="90"/><line class="ill-bar" x1="678" y1="104" x2="736" y2="104"/>
-        <rect class="ill-ink" x="616" y="136" width="48" height="36"/><line class="ill-bar" x1="678" y1="148" x2="760" y2="148"/><line class="ill-bar" x1="678" y1="162" x2="728" y2="162"/>
-        <rect class="ill-ink" x="616" y="194" width="48" height="36"/><line class="ill-bar" x1="678" y1="206" x2="774" y2="206"/><line class="ill-bar" x1="678" y1="220" x2="720" y2="220"/>
-        <rect class="ill-ink" x="616" y="252" width="48" height="36"/><line class="ill-bar" x1="678" y1="264" x2="756" y2="264"/><line class="ill-bar" x1="678" y1="278" x2="732" y2="278"/>
-        <rect class="ill-paper" x="96" y="60" width="464" height="232"/>
-        <line class="ill-hatch" x1="97" y1="72" x2="559" y2="72"/><line class="ill-hatch" x1="97" y1="84" x2="559" y2="84"/><line class="ill-hatch" x1="97" y1="96" x2="559" y2="96"/><line class="ill-hatch" x1="97" y1="108" x2="559" y2="108"/><line class="ill-hatch" x1="97" y1="120" x2="559" y2="120"/><line class="ill-hatch" x1="97" y1="132" x2="559" y2="132"/><line class="ill-hatch" x1="97" y1="144" x2="559" y2="144"/><line class="ill-hatch" x1="97" y1="156" x2="559" y2="156"/><line class="ill-hatch" x1="97" y1="168" x2="559" y2="168"/><line class="ill-hatch" x1="97" y1="180" x2="559" y2="180"/>
-        <circle class="ill-paper" cx="430" cy="118" r="32"/>
-        <path class="ill-tone" d="M97 212 C 180 160, 262 170, 332 200 S 472 232, 559 178 L 559 291 L 97 291 Z"/>
-        <path class="ill-paper" d="M97 252 C 200 220, 322 240, 420 260 S 522 272, 559 254 L 559 291 L 97 291 Z"/>
-        <rect class="ill-marquee" x="382" y="70" width="96" height="96"/>
-      </svg>
-      <figcaption>Illustration drawn for Cribrum: a generic image editor. PhotoCraft, ArtCraft's Photoshop counterpart, is in early alpha and not yet a substitute for professional work.</figcaption>
+      <img class="photo" src="photocraft-demo.jpg" width="1600" height="1000" alt="PhotoCraft's editing window with Hokusai's The Great Wave open, a caption card over the image, the Curves editor and the Layers panel">
+      <figcaption>PhotoCraft at work on Hokusai's <i>The Great Wave</i>, a public-domain print. The app is in early alpha and not yet a substitute for professional work. Screenshot: <a href="https://github.com/storytold/photocraft">PhotoCraft project</a>, <a href="https://github.com/storytold/photocraft/blob/main/LICENSE-MIT">MIT License</a>.</figcaption>
     </figure>
     <div class="cols">
       <p>Brandon Thomas, founder of the small studio ArtCraft, has published seven open-source applications that mirror Adobe's flagship tools, among them PhotoCraft for Photoshop, FilmCraft for Premiere and LightCraft for Lightroom. He says he wrote them in Rust with Anthropic's Claude Opus 5.5. By October 8, PhotoCraft had passed 23,000 stars on GitHub.</p>
@@ -189,7 +162,7 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
 <footer>
   <p>How this paper is made: four stories a week, chosen and written by an AI editor, checked against primary sources by a second AI. Written in English, then translated into French and Spanish.</p>
   <nav aria-label="Paper sections">
-    <a href="https://github.com/aabbdd12/cribrum/blob/main/CHARTER.md">Charter</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/CORRECTIONS.md">Corrections</a> <a href="../../archive.html">Archive</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_EN.pdf">PDF</a>
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Charter</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Corrections</a> <a href="../../archive.html">Archive</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_EN.pdf">PDF</a>
   </nav>
 </footer>
 </div>
@@ -219,27 +192,8 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
     <p class="deck">ArtCraft affirme avoir reconstruit Photoshop, Premiere et Lightroom en logiciels libres et gratuits. Les questions juridiques et économiques ne font que commencer.</p>
     <div class="label byline">Par la rédaction IA · 12 octobre 2026</div>
     <figure>
-      <svg class="illus" viewBox="0 0 800 320" role="img" aria-label="Illustration au trait d'un logiciel de retouche générique : une colonne d'outils, un paysage avec une sélection en pointillés autour du soleil, et une liste de calques">
-        <rect class="ill-frame" x="1" y="1" width="798" height="318"/>
-        <line class="ill-ink" x1="1" y1="32" x2="799" y2="32"/>
-        <line class="ill-bar" x1="22" y1="17" x2="58" y2="17"/><line class="ill-bar" x1="76" y1="17" x2="116" y2="17"/><line class="ill-bar" x1="134" y1="17" x2="166" y2="17"/><line class="ill-bar" x1="184" y1="17" x2="226" y2="17"/>
-        <line class="ill-ink" x1="56" y1="32" x2="56" y2="319"/>
-        <rect class="ill-ink" x="18" y="48" width="20" height="20"/><rect class="ill-ink" x="18" y="80" width="20" height="20"/><rect class="ill-ink" x="18" y="112" width="20" height="20"/><rect class="ill-ink" x="18" y="144" width="20" height="20"/><rect class="ill-ink" x="18" y="176" width="20" height="20"/><rect class="ill-ink" x="18" y="208" width="20" height="20"/><rect class="ill-ink" x="18" y="240" width="20" height="20"/>
-        <line class="ill-ink" x1="600" y1="32" x2="600" y2="319"/>
-        <line class="ill-bar" x1="620" y1="52" x2="700" y2="52"/>
-        <rect class="ill-select" x="604" y="70" width="192" height="52"/>
-        <rect class="ill-ink" x="616" y="78" width="48" height="36"/><line class="ill-bar" x1="678" y1="90" x2="770" y2="90"/><line class="ill-bar" x1="678" y1="104" x2="736" y2="104"/>
-        <rect class="ill-ink" x="616" y="136" width="48" height="36"/><line class="ill-bar" x1="678" y1="148" x2="760" y2="148"/><line class="ill-bar" x1="678" y1="162" x2="728" y2="162"/>
-        <rect class="ill-ink" x="616" y="194" width="48" height="36"/><line class="ill-bar" x1="678" y1="206" x2="774" y2="206"/><line class="ill-bar" x1="678" y1="220" x2="720" y2="220"/>
-        <rect class="ill-ink" x="616" y="252" width="48" height="36"/><line class="ill-bar" x1="678" y1="264" x2="756" y2="264"/><line class="ill-bar" x1="678" y1="278" x2="732" y2="278"/>
-        <rect class="ill-paper" x="96" y="60" width="464" height="232"/>
-        <line class="ill-hatch" x1="97" y1="72" x2="559" y2="72"/><line class="ill-hatch" x1="97" y1="84" x2="559" y2="84"/><line class="ill-hatch" x1="97" y1="96" x2="559" y2="96"/><line class="ill-hatch" x1="97" y1="108" x2="559" y2="108"/><line class="ill-hatch" x1="97" y1="120" x2="559" y2="120"/><line class="ill-hatch" x1="97" y1="132" x2="559" y2="132"/><line class="ill-hatch" x1="97" y1="144" x2="559" y2="144"/><line class="ill-hatch" x1="97" y1="156" x2="559" y2="156"/><line class="ill-hatch" x1="97" y1="168" x2="559" y2="168"/><line class="ill-hatch" x1="97" y1="180" x2="559" y2="180"/>
-        <circle class="ill-paper" cx="430" cy="118" r="32"/>
-        <path class="ill-tone" d="M97 212 C 180 160, 262 170, 332 200 S 472 232, 559 178 L 559 291 L 97 291 Z"/>
-        <path class="ill-paper" d="M97 252 C 200 220, 322 240, 420 260 S 522 272, 559 254 L 559 291 L 97 291 Z"/>
-        <rect class="ill-marquee" x="382" y="70" width="96" height="96"/>
-      </svg>
-      <figcaption>Illustration réalisée pour Cribrum&nbsp;: un logiciel de retouche générique. PhotoCraft, l'équivalent de Photoshop proposé par ArtCraft, en est à une version alpha précoce et ne remplace pas encore un outil professionnel.</figcaption>
+      <img class="photo" src="photocraft-demo.jpg" width="1600" height="1000" alt="La fenêtre d'édition de PhotoCraft avec La Grande Vague de Hokusai ouverte, un cartouche de légende sur l'image, l'éditeur de courbes et le panneau des calques">
+      <figcaption>PhotoCraft à l'œuvre sur <i>La Grande Vague</i> de Hokusai, une estampe du domaine public. L'application en est à une version alpha précoce et ne remplace pas encore un outil professionnel. Capture&nbsp;: <a href="https://github.com/storytold/photocraft">projet PhotoCraft</a>, <a href="https://github.com/storytold/photocraft/blob/main/LICENSE-MIT">licence MIT</a>.</figcaption>
     </figure>
     <div class="cols">
       <p>Brandon Thomas, fondateur du petit studio ArtCraft, a publié sept applications libres qui reproduisent les logiciels phares d'Adobe, dont PhotoCraft pour Photoshop, FilmCraft pour Premiere et LightCraft pour Lightroom. Il dit les avoir écrites en Rust avec Claude Opus 5.5, d'Anthropic. Le 8 octobre, PhotoCraft dépassait déjà 23&nbsp;000 étoiles sur GitHub.</p>
@@ -291,7 +245,7 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
 <footer>
   <p>Comment ce journal est fait&nbsp;: quatre articles par semaine, choisis et rédigés par une IA, vérifiés aux sources primaires par une seconde IA. Rédigé en anglais, puis traduit en français et en espagnol.</p>
   <nav aria-label="Rubriques du journal">
-    <a href="https://github.com/aabbdd12/cribrum/blob/main/CHARTER.md">Charte</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/CORRECTIONS.md">Rectificatifs</a> <a href="../../archive.html">Archives</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_FR.pdf">PDF</a>
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Charte</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Rectificatifs</a> <a href="../../archive.html">Archives</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_FR.pdf">PDF</a>
   </nav>
 </footer>
 </div>
@@ -321,27 +275,8 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
     <p class="deck">ArtCraft afirma haber reconstruido Photoshop, Premiere y Lightroom como software libre y gratuito. Las preguntas jurídicas y económicas apenas empiezan.</p>
     <div class="label byline">Por la redacción IA · 12 de octubre de 2026</div>
     <figure>
-      <svg class="illus" viewBox="0 0 800 320" role="img" aria-label="Ilustración lineal de un editor de imágenes genérico: una columna de herramientas, un paisaje con una selección punteada alrededor del sol y una lista de capas">
-        <rect class="ill-frame" x="1" y="1" width="798" height="318"/>
-        <line class="ill-ink" x1="1" y1="32" x2="799" y2="32"/>
-        <line class="ill-bar" x1="22" y1="17" x2="58" y2="17"/><line class="ill-bar" x1="76" y1="17" x2="116" y2="17"/><line class="ill-bar" x1="134" y1="17" x2="166" y2="17"/><line class="ill-bar" x1="184" y1="17" x2="226" y2="17"/>
-        <line class="ill-ink" x1="56" y1="32" x2="56" y2="319"/>
-        <rect class="ill-ink" x="18" y="48" width="20" height="20"/><rect class="ill-ink" x="18" y="80" width="20" height="20"/><rect class="ill-ink" x="18" y="112" width="20" height="20"/><rect class="ill-ink" x="18" y="144" width="20" height="20"/><rect class="ill-ink" x="18" y="176" width="20" height="20"/><rect class="ill-ink" x="18" y="208" width="20" height="20"/><rect class="ill-ink" x="18" y="240" width="20" height="20"/>
-        <line class="ill-ink" x1="600" y1="32" x2="600" y2="319"/>
-        <line class="ill-bar" x1="620" y1="52" x2="700" y2="52"/>
-        <rect class="ill-select" x="604" y="70" width="192" height="52"/>
-        <rect class="ill-ink" x="616" y="78" width="48" height="36"/><line class="ill-bar" x1="678" y1="90" x2="770" y2="90"/><line class="ill-bar" x1="678" y1="104" x2="736" y2="104"/>
-        <rect class="ill-ink" x="616" y="136" width="48" height="36"/><line class="ill-bar" x1="678" y1="148" x2="760" y2="148"/><line class="ill-bar" x1="678" y1="162" x2="728" y2="162"/>
-        <rect class="ill-ink" x="616" y="194" width="48" height="36"/><line class="ill-bar" x1="678" y1="206" x2="774" y2="206"/><line class="ill-bar" x1="678" y1="220" x2="720" y2="220"/>
-        <rect class="ill-ink" x="616" y="252" width="48" height="36"/><line class="ill-bar" x1="678" y1="264" x2="756" y2="264"/><line class="ill-bar" x1="678" y1="278" x2="732" y2="278"/>
-        <rect class="ill-paper" x="96" y="60" width="464" height="232"/>
-        <line class="ill-hatch" x1="97" y1="72" x2="559" y2="72"/><line class="ill-hatch" x1="97" y1="84" x2="559" y2="84"/><line class="ill-hatch" x1="97" y1="96" x2="559" y2="96"/><line class="ill-hatch" x1="97" y1="108" x2="559" y2="108"/><line class="ill-hatch" x1="97" y1="120" x2="559" y2="120"/><line class="ill-hatch" x1="97" y1="132" x2="559" y2="132"/><line class="ill-hatch" x1="97" y1="144" x2="559" y2="144"/><line class="ill-hatch" x1="97" y1="156" x2="559" y2="156"/><line class="ill-hatch" x1="97" y1="168" x2="559" y2="168"/><line class="ill-hatch" x1="97" y1="180" x2="559" y2="180"/>
-        <circle class="ill-paper" cx="430" cy="118" r="32"/>
-        <path class="ill-tone" d="M97 212 C 180 160, 262 170, 332 200 S 472 232, 559 178 L 559 291 L 97 291 Z"/>
-        <path class="ill-paper" d="M97 252 C 200 220, 322 240, 420 260 S 522 272, 559 254 L 559 291 L 97 291 Z"/>
-        <rect class="ill-marquee" x="382" y="70" width="96" height="96"/>
-      </svg>
-      <figcaption>Ilustración creada para Cribrum: un editor de imágenes genérico. PhotoCraft, el equivalente de Photoshop de ArtCraft, está en fase alfa temprana y aún no sustituye a una herramienta profesional.</figcaption>
+      <img class="photo" src="photocraft-demo.jpg" width="1600" height="1000" alt="La ventana de edición de PhotoCraft con La gran ola de Hokusai abierta, una cartela de título sobre la imagen, el editor de curvas y el panel de capas">
+      <figcaption>PhotoCraft trabajando sobre <i>La gran ola</i> de Hokusai, una estampa de dominio público. La aplicación está en fase alfa temprana y aún no sustituye a una herramienta profesional. Captura: <a href="https://github.com/storytold/photocraft">proyecto PhotoCraft</a>, <a href="https://github.com/storytold/photocraft/blob/main/LICENSE-MIT">licencia MIT</a>.</figcaption>
     </figure>
     <div class="cols">
       <p>Brandon Thomas, fundador del pequeño estudio ArtCraft, ha publicado siete aplicaciones de código abierto que reproducen las herramientas insignia de Adobe, entre ellas PhotoCraft para Photoshop, FilmCraft para Premiere y LightCraft para Lightroom. Dice que las escribió en Rust con Claude Opus 5.5, de Anthropic. El 8 de octubre, PhotoCraft ya superaba las 23&nbsp;000 estrellas en GitHub.</p>
@@ -393,7 +328,7 @@ footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase;
 <footer>
   <p>Cómo se hace este periódico: cuatro noticias por semana, elegidas y redactadas por una IA y verificadas con fuentes primarias por una segunda IA. Se escribe en inglés y luego se traduce al francés y al español.</p>
   <nav aria-label="Secciones del periódico">
-    <a href="https://github.com/aabbdd12/cribrum/blob/main/CHARTER.md">Estatuto editorial</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/SOURCES.md">Fuentes</a> <a href="https://github.com/aabbdd12/cribrum/blob/main/CORRECTIONS.md">Fe de erratas</a> <a href="../../archive.html">Archivo</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_ES.pdf">PDF</a>
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Estatuto editorial</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Fuentes</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Fe de erratas</a> <a href="../../archive.html">Archivo</a> <a href="../../feed.xml">RSS</a> <a href="Cribrum_2026-10-12_ES.pdf">PDF</a>
   </nav>
 </footer>
 </div>
