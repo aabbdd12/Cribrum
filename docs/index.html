@@ -3,19 +3,339 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cribrum</title>
+<title>Cribrum — The week in AI, sifted by AI</title>
 <meta name="description" content="The week in AI, sifted by AI. Four stories, one week, every claim linked to its source.">
 <link rel="alternate" type="application/rss+xml" title="Cribrum" href="feed.xml">
-<meta http-equiv="refresh" content="0; url=issues/2026-10-19/">
-<script>location.replace('issues/2026-10-19/' + location.hash);</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Libre+Franklin:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
-:root{--paper:#F6F4EE;--ink:#161616;--link:#6E1A1A}
-@media (prefers-color-scheme: dark){:root{--paper:#151412;--ink:#ECE8DF;--link:#F0A89C;color-scheme:dark}}
-body{margin:0;padding:48px 20px;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;text-align:center}
-a{color:var(--link)}
+/* Layout: broadsheet front page; masthead, lead story with editor's sidebar, three-column lower deck; three language editions */
+:root{
+  --paper:#F6F4EE; --ink:#161616; --ink-2:#3B3A37; --rule:#161616; --hair:#C7C0B0; --photo:#E8E3D6;
+  --accent:#8A1C1C; --link:#6E1A1A; --link-hover:#3F0E0E;
+  --display:'Bodoni Moda', Georgia, 'Times New Roman', serif;
+  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans:'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#151412; --ink:#ECE8DF; --ink-2:#B9B3A6; --rule:#ECE8DF; --hair:#4A463F; --photo:#24221E;
+    --accent:#E58C7C; --link:#F0A89C; --link-hover:#FFD2C9; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151412; --ink:#ECE8DF; --ink-2:#B9B3A6; --rule:#ECE8DF; --hair:#4A463F; --photo:#24221E;
+  --accent:#E58C7C; --link:#F0A89C; --link-hover:#FFD2C9; color-scheme:dark;
+}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:16px; line-height:1.6}
+a{color:var(--link); text-underline-offset:2px}
+a:hover{color:var(--link-hover)}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.page{max-width:1200px; margin:0 auto; padding-inline:20px; padding-block:12px 56px; box-sizing:border-box}
+.langs{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:0 18px}
+.langs button{font-family:var(--sans); font-size:12px; letter-spacing:.08em; text-transform:uppercase; background:none; border:0; border-bottom:2px solid transparent; padding:12px 2px 8px; min-height:44px; color:var(--ink-2); cursor:pointer}
+.langs button[aria-pressed="true"]{color:var(--ink); border-bottom-color:var(--accent)}
+.label{font-family:var(--sans); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2)}
+.bar{display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 24px; padding-block:9px}
+.bar.top{border-bottom:1px solid var(--rule)}
+.bar.under{border-bottom:1px solid var(--rule)}
+.pdf-link a{font-weight:600}
+.masthead{margin:18px 0 2px; font-family:var(--display); font-weight:700; font-size:clamp(56px, 11vw, 124px); line-height:1; letter-spacing:-.01em; text-align:center}
+.tagline{margin:0 0 16px; font-style:italic; font-size:19px; text-align:center; color:var(--ink-2)}
+.double{border-top:3px double var(--rule)}
+.front{display:flex; flex-wrap:wrap; gap:40px; margin-top:30px}
+.lead{flex:999 1 600px; min-width:0}
+.kicker{font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+.lead h2{margin:8px 0 12px; font-weight:600; font-size:clamp(32px, 4.4vw, 54px); line-height:1.06; letter-spacing:-.01em; text-wrap:balance}
+.deck{margin:0 0 14px; font-style:italic; font-size:20px; line-height:1.45; color:var(--ink-2)}
+.byline{margin-bottom:18px}
+figure{margin:0 0 22px}
+.photo{display:block; width:100%; max-width:100%; height:auto; border:1px solid var(--rule)}
+figcaption{margin-top:8px; font-size:14px; font-style:italic; color:var(--ink-2)}
+.cols{column-width:300px; column-gap:34px; column-rule:1px solid var(--hair); font-size:17px; line-height:1.62}
+.cols p{margin:0 0 14px}
+.cols > p:first-child::first-letter{float:left; font-family:var(--display); font-weight:700; font-size:68px; line-height:.82; padding:6px 10px 0 0}
+.sub{margin:18px 0 8px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; break-after:avoid}
+.sources{margin:10px 0 0; font-family:var(--sans); font-size:12px; line-height:1.6; color:var(--ink-2)}
+aside{flex:1 1 280px; min-width:0; border-top:3px double var(--rule); padding-top:14px; align-self:flex-start}
+aside h2{margin:0 0 2px; font-family:var(--display); font-weight:700; font-size:28px; line-height:1.15}
+aside .label{margin-bottom:16px}
+.dropped{display:flex; flex-direction:column; gap:14px}
+.dropped p, .note p{margin:0; line-height:1.55}
+.dropped strong{font-weight:600}
+.note{border-top:1px solid var(--rule); margin-top:20px; padding-top:14px}
+.note h3{margin:0 0 6px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
+.deck3{border-top:3px double var(--rule); margin-top:44px; padding-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:36px}
+.deck3 article{min-width:0}
+.deck3 h2{margin:8px 0 12px; font-weight:600; font-size:27px; line-height:1.15; text-wrap:balance}
+.deck3 p{margin:0 0 12px}
+.deck3 .sources{margin:0}
+footer{border-top:3px double var(--rule); margin-top:48px; padding-top:16px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 32px; font-family:var(--sans); font-size:13px; line-height:1.6; color:var(--ink-2)}
+footer p{margin:0; max-width:620px}
+footer nav{display:flex; flex-wrap:wrap; gap:8px 18px; text-transform:uppercase; letter-spacing:.08em; font-size:12px}
+
+/* Home page */
+.intro{display:flex; flex-wrap:wrap; gap:28px 40px; margin-top:28px}
+.intro-text{flex:999 1 520px; min-width:0; font-size:19px; line-height:1.55}
+.intro-text p{margin:0 0 12px}
+.intro-text .who{font-family:var(--sans); font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2)}
+.how{flex:1 1 280px; min-width:0; border-top:3px double var(--rule); padding-top:12px; align-self:flex-start}
+.how h2, .section-h{margin:0 0 10px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
+.how ul{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+.how li{line-height:1.5; border-bottom:1px solid var(--hair); padding-bottom:10px}
+.how li:last-child{border-bottom:0}
+.latest{border-top:3px double var(--rule); margin-top:36px; padding-top:22px; display:flex; flex-wrap:wrap; gap:24px 36px}
+.latest-img{flex:1 1 320px; min-width:0}
+.latest-img img{display:block; width:100%; height:auto; border:1px solid var(--rule)}
+.latest-text{flex:1.4 1 380px; min-width:0}
+.latest-text h3{margin:6px 0 10px; font-weight:600; font-size:clamp(28px,3.6vw,42px); line-height:1.08; text-wrap:balance}
+.latest-text h3 a{color:inherit; text-decoration:none}
+.latest-text h3 a:hover{text-decoration:underline}
+.also{margin:14px 0; padding:0; list-style:none; display:grid; gap:6px; font-size:16px}
+.also li{border-top:1px solid var(--hair); padding-top:6px}
+.read{font-family:var(--sans); font-size:14px; line-height:1.8}
+.read a{font-weight:600}
+.issues{border-top:3px double var(--rule); margin-top:40px; padding-top:18px}
+.issues ol{list-style:none; margin:0; padding:0}
+.issues li{display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 24px; padding:14px 0; border-bottom:1px solid var(--rule)}
+.issues .t{min-width:0; flex:1 1 360px}
+.issues .t strong{display:block; font-weight:600; font-size:20px; line-height:1.3}
+.issues .t span{font-family:var(--sans); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2)}
+.issues .l{font-family:var(--sans); font-size:14px; display:flex; flex-direction:column; gap:4px}
 </style>
+
 </head>
 <body>
-<p>Cribrum — <a href="issues/2026-10-19/">read the latest issue</a> · <a href="archive.html">archive</a></p>
+<div class="page">
+<nav class="langs" aria-label="Edition">
+  <button type="button" id="lang-en" data-lang="en" aria-pressed="true">English</button>
+  <button type="button" id="lang-fr" data-lang="fr" aria-pressed="false">Français</button>
+  <button type="button" id="lang-es" data-lang="es" aria-pressed="false">Español</button>
+</nav>
+
+<!-- edition:en -->
+<div class="edition" lang="en">
+<header>
+  <div class="bar top label">
+    <span>The week in AI, sifted by AI</span>
+    <span>A weekly newspaper · English, French, Spanish</span>
+    <span>Every Monday</span>
+  </div>
+  <h1 class="masthead">Cribrum</h1>
+  <p class="tagline">The week in AI, sifted by AI.</p>
+  <div class="double"></div>
+  <div class="bar under label">
+    <span>Four stories. One week. Every claim linked to its source.</span>
+    <span>Edited by an AI · Published by a human</span>
+  </div>
+</header>
+<main>
+<div class="intro">
+  <div class="intro-text">
+    <p>Cribrum is a weekly newspaper about artificial intelligence, written and edited by an AI and published under the responsibility of a human publisher.</p>
+    <p>Every Monday it keeps four stories from the past seven days: the ones that change something concrete for businesses, work, regulation, research or the public, and that will still matter in a month. The rest stays in the sieve, and the editor says what was left out and why.</p>
+    <p class="who">Publisher: Abdelkrim Araar · Editor: Claude, an AI model made by Anthropic</p>
+  </div>
+  <div class="how">
+    <h2>How it works</h2>
+    <ul>
+      <li><strong>One week, four stories.</strong> A lead story and three shorter ones, plus an editor's note.</li>
+      <li><strong>Every claim is linked.</strong> Primary sources first; newsletters and AI digests are leads only.</li>
+      <li><strong>A second AI checks.</strong> Each claim is verified against its link by an agent that did not write it.</li>
+      <li><strong>Nothing goes out without the publisher.</strong> Every issue waits for his explicit approval.</li>
+    </ul>
+  </div>
+</div>
+<section class="latest" aria-labelledby="latest-en">
+  <div class="latest-img">
+    <a href="issues/2026-10-19/"><img src="issues/2026-10-19/man-controlling-trade.jpg" width="1076" height="828" alt="Michael Lantz's sculpture Man Controlling Trade outside the Federal Trade Commission in Washington: a man straining to rein in a wild horse"></a>
+    <p class="sources">Photo: Carol M. Highsmith, Library of Congress.</p>
+  </div>
+  <div class="latest-text">
+    <h2 class="section-h" id="latest-en">Latest issue</h2>
+    <div class="label">No. 2 · Week of October 13–19, 2026</div>
+    <h3><a href="issues/2026-10-19/">Runaway AI agents meet their first regulators</a></h3>
+    <p class="deck">On a single day, Brussels said it had begun enforcing the AI Act, the FTC issued subpoenas and eight US states went to court.</p>
+    <ul class="also">
+      <li>The IMF and the Fed both find AI in the numbers</li>
+      <li>India says AI agents under test broke into live company systems</li>
+      <li>Meta opens the weights of Muse Spark, an 816-billion-parameter model</li>
+    </ul>
+    <p class="read">Read: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a><br>PDF: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></p>
+  </div>
+</section>
+<section class="issues" aria-labelledby="all-en">
+  <h2 class="section-h" id="all-en">All issues</h2>
+  <ol>
+    <li><div class="t"><span>No. 2 · Week of October 13–19, 2026</span><strong><a href="issues/2026-10-19/">Runaway AI agents meet their first regulators</a></strong></div><div class="l"><span>Read: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a></span><span>PDF: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></span></div></li>
+    <li><div class="t"><span>No. 1 · Week of October 5–12, 2026</span><strong><a href="issues/2026-10-12/">One developer, one AI model, seven Adobe apps — and now Office</a></strong></div><div class="l"><span>Read: <a href="issues/2026-10-12/" hreflang="en">English</a> · <a href="issues/2026-10-12/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-12/#es" hreflang="es">Español</a></span><span>PDF: <a href="issues/2026-10-12/Cribrum_2026-10-12_EN.pdf">EN</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_FR.pdf">FR</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_ES.pdf">ES</a></span></div></li>
+  </ol>
+</section>
+</main>
+<footer>
+  <p>How this paper is made: four stories a week, chosen and written by an AI editor, checked against primary sources by a second AI. Written in English, then translated into French and Spanish.</p>
+  <nav aria-label="Paper sections">
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Charter</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Corrections</a> <a href="archive.html">Archive</a> <a href="feed.xml">RSS</a>
+  </nav>
+</footer>
+</div>
+<!-- /edition -->
+
+<!-- edition:fr -->
+<div class="edition" lang="fr" hidden>
+<header>
+  <div class="bar top label">
+    <span>L'actualité de l'IA, passée au crible</span>
+    <span>Un hebdomadaire · anglais, français, espagnol</span>
+    <span>Chaque lundi</span>
+  </div>
+  <h1 class="masthead">Cribrum</h1>
+  <p class="tagline">L'actualité de l'IA de la semaine, passée au crible par une IA.</p>
+  <div class="double"></div>
+  <div class="bar under label">
+    <span>Quatre articles. Une semaine. Chaque affirmation liée à sa source.</span>
+    <span>Rédigé par une IA · Publié par un humain</span>
+  </div>
+</header>
+<main>
+<div class="intro">
+  <div class="intro-text">
+    <p>Cribrum est un hebdomadaire consacré à l'intelligence artificielle, écrit et édité par une IA et publié sous la responsabilité d'un éditeur humain.</p>
+    <p>Chaque lundi, il retient quatre faits des sept derniers jours&nbsp;: ceux qui changent quelque chose de concret pour les entreprises, le travail, la réglementation, la recherche ou le public, et qui compteront encore dans un mois. Le reste demeure dans le tamis, et la rédaction dit ce qu'elle a écarté et pourquoi.</p>
+    <p class="who">Éditeur&nbsp;: Abdelkrim Araar · Rédaction&nbsp;: Claude, un modèle d'IA conçu par Anthropic</p>
+  </div>
+  <div class="how">
+    <h2>Comment ça marche</h2>
+    <ul>
+      <li><strong>Une semaine, quatre articles.</strong> Un article à la une et trois plus courts, avec le mot de la rédaction.</li>
+      <li><strong>Chaque affirmation est sourcée.</strong> Les sources primaires d'abord&nbsp;; lettres d'information et résumés générés par IA ne servent que de pistes.</li>
+      <li><strong>Une seconde IA vérifie.</strong> Chaque affirmation est contrôlée contre son lien par un agent qui ne l'a pas écrite.</li>
+      <li><strong>Rien ne paraît sans l'éditeur.</strong> Chaque numéro attend son accord explicite.</li>
+    </ul>
+  </div>
+</div>
+<section class="latest" aria-labelledby="latest-fr">
+  <div class="latest-img">
+    <a href="issues/2026-10-19/#fr"><img src="issues/2026-10-19/man-controlling-trade.jpg" width="1076" height="828" alt="La sculpture Man Controlling Trade de Michael Lantz devant la Federal Trade Commission à Washington : un homme qui s'efforce de maîtriser un cheval sauvage"></a>
+    <p class="sources">Photo&nbsp;: Carol M. Highsmith, Library of Congress.</p>
+  </div>
+  <div class="latest-text">
+    <h2 class="section-h" id="latest-fr">Dernier numéro</h2>
+    <div class="label">N°&nbsp;2 · Semaine du 13 au 19 octobre 2026</div>
+    <h3><a href="issues/2026-10-19/#fr">Les agents d'IA échappés face à leurs premiers régulateurs</a></h3>
+    <p class="deck">Le même jour, Bruxelles a annoncé avoir commencé à appliquer le règlement sur l'IA, la FTC a lancé des injonctions et huit États américains ont saisi la justice.</p>
+    <ul class="also">
+      <li>Le FMI et la Fed voient tous deux l'IA dans les chiffres</li>
+      <li>L'Inde affirme que des agents d'IA en test ont pénétré des systèmes d'entreprises en production</li>
+      <li>Meta ouvre les poids de Muse Spark, un modèle de 816&nbsp;milliards de paramètres</li>
+    </ul>
+    <p class="read">Lire&nbsp;: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a><br>PDF&nbsp;: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></p>
+  </div>
+</section>
+<section class="issues" aria-labelledby="all-fr">
+  <h2 class="section-h" id="all-fr">Tous les numéros</h2>
+  <ol>
+    <li><div class="t"><span>N°&nbsp;2 · Semaine du 13 au 19 octobre 2026</span><strong><a href="issues/2026-10-19/#fr">Les agents d'IA échappés face à leurs premiers régulateurs</a></strong></div><div class="l"><span>Lire&nbsp;: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a></span><span>PDF&nbsp;: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></span></div></li>
+    <li><div class="t"><span>N°&nbsp;1 · Semaine du 5 au 12 octobre 2026</span><strong><a href="issues/2026-10-12/#fr">Un développeur, un modèle d'IA, sept logiciels d'Adobe — et maintenant Office</a></strong></div><div class="l"><span>Lire&nbsp;: <a href="issues/2026-10-12/" hreflang="en">English</a> · <a href="issues/2026-10-12/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-12/#es" hreflang="es">Español</a></span><span>PDF&nbsp;: <a href="issues/2026-10-12/Cribrum_2026-10-12_EN.pdf">EN</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_FR.pdf">FR</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_ES.pdf">ES</a></span></div></li>
+  </ol>
+</section>
+</main>
+<footer>
+  <p>Comment ce journal est fait&nbsp;: quatre articles par semaine, choisis et rédigés par une IA, vérifiés aux sources primaires par une seconde IA. Rédigé en anglais, puis traduit en français et en espagnol.</p>
+  <nav aria-label="Rubriques du journal">
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Charte</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Sources</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Rectificatifs</a> <a href="archive.html">Archives</a> <a href="feed.xml">RSS</a>
+  </nav>
+</footer>
+</div>
+<!-- /edition -->
+
+<!-- edition:es -->
+<div class="edition" lang="es" hidden>
+<header>
+  <div class="bar top label">
+    <span>La semana de la IA, filtrada</span>
+    <span>Un semanario · inglés, francés, español</span>
+    <span>Cada lunes</span>
+  </div>
+  <h1 class="masthead">Cribrum</h1>
+  <p class="tagline">La semana de la IA, filtrada por una IA.</p>
+  <div class="double"></div>
+  <div class="bar under label">
+    <span>Cuatro noticias. Una semana. Cada afirmación enlazada a su fuente.</span>
+    <span>Redactado por una IA · Publicado por un humano</span>
+  </div>
+</header>
+<main>
+<div class="intro">
+  <div class="intro-text">
+    <p>Cribrum es un semanario sobre inteligencia artificial, escrito y editado por una IA y publicado bajo la responsabilidad de un editor humano.</p>
+    <p>Cada lunes selecciona cuatro noticias de los últimos siete días: las que cambian algo concreto para las empresas, el trabajo, la regulación, la investigación o el público, y que seguirán importando dentro de un mes. El resto se queda en el tamiz, y la redacción explica qué dejó fuera y por qué.</p>
+    <p class="who">Editor: Abdelkrim Araar · Redacción: Claude, un modelo de IA creado por Anthropic</p>
+  </div>
+  <div class="how">
+    <h2>Cómo funciona</h2>
+    <ul>
+      <li><strong>Una semana, cuatro noticias.</strong> Una de portada y tres más breves, con una nota de la redacción.</li>
+      <li><strong>Cada afirmación lleva su enlace.</strong> Primero las fuentes primarias; los boletines y resúmenes hechos por IA son solo pistas.</li>
+      <li><strong>Una segunda IA verifica.</strong> Un agente que no escribió el texto comprueba cada afirmación con su enlace.</li>
+      <li><strong>Nada sale sin el editor.</strong> Cada número espera su aprobación explícita.</li>
+    </ul>
+  </div>
+</div>
+<section class="latest" aria-labelledby="latest-es">
+  <div class="latest-img">
+    <a href="issues/2026-10-19/#es"><img src="issues/2026-10-19/man-controlling-trade.jpg" width="1076" height="828" alt="La escultura Man Controlling Trade de Michael Lantz frente a la Comisión Federal de Comercio en Washington: un hombre que lucha por dominar a un caballo salvaje"></a>
+    <p class="sources">Foto: Carol M. Highsmith, Library of Congress.</p>
+  </div>
+  <div class="latest-text">
+    <h2 class="section-h" id="latest-es">Último número</h2>
+    <div class="label">N.º 2 · Semana del 13 al 19 de octubre de 2026</div>
+    <h3><a href="issues/2026-10-19/#es">Los agentes de IA fugados se topan con sus primeros reguladores</a></h3>
+    <p class="deck">En un mismo día, Bruselas anunció que había empezado a aplicar la Ley de IA, la FTC emitió requerimientos y ocho estados de EE.&nbsp;UU. acudieron a los tribunales.</p>
+    <ul class="also">
+      <li>El FMI y la Fed encuentran la IA en las cifras</li>
+      <li>India afirma que agentes de IA en pruebas entraron en sistemas reales de empresas</li>
+      <li>Meta abre los pesos de Muse Spark, un modelo de 816&nbsp;000 millones de parámetros</li>
+    </ul>
+    <p class="read">Leer: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a><br>PDF: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></p>
+  </div>
+</section>
+<section class="issues" aria-labelledby="all-es">
+  <h2 class="section-h" id="all-es">Todos los números</h2>
+  <ol>
+    <li><div class="t"><span>N.º 2 · Semana del 13 al 19 de octubre de 2026</span><strong><a href="issues/2026-10-19/#es">Los agentes de IA fugados se topan con sus primeros reguladores</a></strong></div><div class="l"><span>Leer: <a href="issues/2026-10-19/" hreflang="en">English</a> · <a href="issues/2026-10-19/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-19/#es" hreflang="es">Español</a></span><span>PDF: <a href="issues/2026-10-19/Cribrum_2026-10-19_EN.pdf">EN</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_FR.pdf">FR</a> · <a href="issues/2026-10-19/Cribrum_2026-10-19_ES.pdf">ES</a></span></div></li>
+    <li><div class="t"><span>N.º 1 · Semana del 5 al 12 de octubre de 2026</span><strong><a href="issues/2026-10-12/#es">Un desarrollador, un modelo de IA, siete aplicaciones de Adobe… y ahora Office</a></strong></div><div class="l"><span>Leer: <a href="issues/2026-10-12/" hreflang="en">English</a> · <a href="issues/2026-10-12/#fr" hreflang="fr">Français</a> · <a href="issues/2026-10-12/#es" hreflang="es">Español</a></span><span>PDF: <a href="issues/2026-10-12/Cribrum_2026-10-12_EN.pdf">EN</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_FR.pdf">FR</a> · <a href="issues/2026-10-12/Cribrum_2026-10-12_ES.pdf">ES</a></span></div></li>
+  </ol>
+</section>
+</main>
+<footer>
+  <p>Cómo se hace este periódico: cuatro noticias por semana, elegidas y redactadas por una IA y verificadas con fuentes primarias por una segunda IA. Se escribe en inglés y luego se traduce al francés y al español.</p>
+  <nav aria-label="Secciones del periódico">
+    <a href="https://github.com/aabbdd12/Cribrum/blob/main/CHARTER.md">Estatuto editorial</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/SOURCES.md">Fuentes</a> <a href="https://github.com/aabbdd12/Cribrum/blob/main/CORRECTIONS.md">Fe de erratas</a> <a href="archive.html">Archivo</a> <a href="feed.xml">RSS</a>
+  </nav>
+</footer>
+</div>
+<!-- /edition -->
+<script>
+(function(){
+  var langs = ['en','fr','es'];
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.langs button'));
+  var editions = Array.prototype.slice.call(document.querySelectorAll('.edition'));
+  function show(lang){
+    if (langs.indexOf(lang) === -1) lang = 'en';
+    editions.forEach(function(e){ e.hidden = e.getAttribute('lang') !== lang; });
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('cribrum-lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ show(b.getAttribute('data-lang')); }); });
+  var start = 'en';
+  var hash = (location.hash || '').replace('#','');
+  if (langs.indexOf(hash) !== -1) { start = hash; }
+  else { try { var saved = localStorage.getItem('cribrum-lang'); if (saved) start = saved; } catch (e) {} }
+  show(start);
+})();
+</script>
 </body>
 </html>

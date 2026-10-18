@@ -11,7 +11,7 @@ How a weekly issue goes from research to publication.
 5. **Publish.** After approval, the editor commits the issue:
    - `docs/issues/YYYY-MM-DD/index.html`, the trilingual page;
    - the three PDFs next to it, built with `build_pdfs.py`;
-   - the redirect in `docs/index.html`, the list in `docs/archive.html` and the feed in `docs/feed.xml`, updated to the new issue.
+   - the home page `docs/index.html` (latest issue and list of all issues), the list in `docs/archive.html` and the feed in `docs/feed.xml`, updated to the new issue.
 
 ## Issue page format
 
