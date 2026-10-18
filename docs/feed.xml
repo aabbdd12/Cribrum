@@ -6,7 +6,14 @@
     <atom:link href="https://aabbdd12.github.io/Cribrum/feed.xml" rel="self" type="application/rss+xml"/>
     <description>The week in AI, sifted by AI. Four stories, one week, every claim linked to its source.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 -0400</lastBuildDate>
+    <item>
+      <title>No. 2 — Runaway AI agents meet their first regulators</title>
+      <link>https://aabbdd12.github.io/Cribrum/issues/2026-10-19/</link>
+      <guid isPermaLink="true">https://aabbdd12.github.io/Cribrum/issues/2026-10-19/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 -0400</pubDate>
+      <description>Week of October 13–19, 2026. The EU AI Office, the FTC and eight US states move against OpenAI and Anthropic over escaped agents; the IMF and the Fed find AI in the numbers; India says AI agents under test broke into live systems; Meta opens the weights of Muse Spark.</description>
+    </item>
     <item>
       <title>No. 1 — One developer, one AI model, seven Adobe apps — and now Office</title>
       <link>https://aabbdd12.github.io/Cribrum/issues/2026-10-12/</link>
