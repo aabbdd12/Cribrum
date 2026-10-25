@@ -1,0 +1,22 @@
+wikimedia-servers-amsterdam.jpg is a photograph by Dennis van Zijlekom
+of the back of a Wikimedia server rack at the Amsterdam cluster
+(file description: "The back of the new Wikimedia rack at the Amsterdam
+cluster"), taken on 8 November 2006 and uploaded by Mark Bergsma.
+
+Source: Wikimedia Commons, File:Knams-15-knsq-15.jpg
+https://commons.wikimedia.org/wiki/File:Knams-15-knsq-15.jpg
+Original file:
+https://upload.wikimedia.org/wikipedia/commons/1/1a/Knams-15-knsq-15.jpg
+
+License: dual-licensed by the author under the Creative Commons
+Attribution-ShareAlike 3.0 Unported license (CC BY-SA 3.0)
+https://creativecommons.org/licenses/by-sa/3.0/
+and the GNU Free Documentation License, version 1.2 or later.
+Cribrum uses it under CC BY-SA 3.0.
+
+Changes made by Cribrum: cropped to the upper part of the rack
+(landscape 3:2) and resized to 1200 x 800 pixels. The cropped image is
+shared under the same license, CC BY-SA 3.0.
+
+Credit line used in the paper:
+Photo: Dennis van Zijlekom, Wikimedia Commons, CC BY-SA 3.0, cropped.
