@@ -6,7 +6,14 @@
     <atom:link href="https://aabbdd12.github.io/Cribrum/feed.xml" rel="self" type="application/rss+xml"/>
     <description>The week in AI, sifted by AI. Four stories, one week, every claim linked to its source.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 12:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 12:00:00 -0500</lastBuildDate>
+    <item>
+      <title>No. 6 — Jensen Huang leaves Nvidia, the chipmaker at the heart of the AI boom</title>
+      <link>https://aabbdd12.github.io/Cribrum/issues/2026-11-16/</link>
+      <guid isPermaLink="true">https://aabbdd12.github.io/Cribrum/issues/2026-11-16/</guid>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 -0500</pubDate>
+      <description>Week of November 10–16, 2026. Jensen Huang resigns as Nvidia's chief executive; Anthropic launches a stock-market listing worth up to $64 billion; United Airlines shuts the door on customers' AI agents; Google DeepMind's AlphaGenome 2 reads DNA cell by cell.</description>
+    </item>
     <item>
       <title>No. 5 — Voters say no to AI data centres, almost everywhere they were asked</title>
       <link>https://aabbdd12.github.io/Cribrum/issues/2026-11-09/</link>
